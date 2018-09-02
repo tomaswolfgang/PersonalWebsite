@@ -1,0 +1,15 @@
+@mixin for-desktop-down {
+    @media (max-width: 1200px) { @content; }
+}
+@mixin for-tablet-landscape-up {
+    @media (min-width: 992px) { @content; }
+}
+@mixin for-tablet-landscape-down {
+    @media (max-width: 991px) { @content; }
+}
+@mixin for-tablet-portrait-up {
+    @media (min-width: 650px) { @content; }
+}
+@mixin for-tablet-portrait-down {
+    @media (max-width: 650px) { @content; }
+}

@@ -1,0 +1,118 @@
+@import 'mixins';
+@import 'variables';
+
+.card-wrapper{
+  width: calc(33% - 30px);
+  padding: 0 15px 30px 15px;
+  @include for-desktop-down{
+    width: calc(50% - 30px);
+  }
+  @include for-tablet-landscape-down{
+
+  }
+  @include for-tablet-portrait-down{
+    width: 100%;
+    max-width: 300px;
+    padding: 0 0 30px 0;
+    float: none;
+    margin:auto;
+  }
+  float:left
+}
+.card-container{
+  width: 100%;
+  text-align: left;
+  box-shadow: 0px 1px 20px rgba(0,0,0,0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.3s, transform 0.3s;
+  &:hover{
+    box-shadow: 0px 1px 25px rgba(0,0,0,0.35);
+    transform: scale(1.01);
+  }
+
+  .card-picture2{
+    width: 100%;
+    position:relative;
+    padding: 30px 0 0;
+    .logo2{
+      margin:auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 7em;
+      color: #2c2c2c;
+    }
+    .card-title{
+      color: white;
+      padding:0 30px;
+      text-shadow: 0px 1px 8px rgba(0,0,0,0.5);
+    }
+    .date{
+      font-weight: bold;
+      color: $grey-mid;
+      font-size: 12px;
+      padding: 0 30px;
+    }
+  }
+
+  .card-picture{
+    width: 100%;
+    padding-top: 100%;
+    position:relative;
+
+    .logo{
+      height: 70%;
+      border-radius: 10px;
+      overflow: hidden;
+      width: 70%;
+      position:absolute;
+      top: 13%;
+      left: 15%;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .card-title{
+      position:absolute;
+      bottom:30px;
+      color: white;
+      left:30px;
+      text-shadow: 0px 1px 8px rgba(0,0,0,0.5);
+    }
+    .date{
+      position: absolute;
+      bottom: 15px;
+      left: 30px;
+      font-weight: bold;
+      color: $grey-mid;
+      font-size: 12px;
+    }
+  }
+
+  .card-desc-container{
+    //min-height: 120px;
+    position:relative;
+    padding: 0 30px 30px;
+    display: flex;
+    color: $grey-mid;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    h4{
+      color: $grey-low;
+    }
+    p{
+      flex-grow: 1;
+    }
+  }
+  .card-link{
+    text-decoration: none;
+    color: $grey-high;
+    opacity: 1;
+    transition: opacity 1s;
+    &:hover{
+      opacity: 0.8;
+    }
+  }
+}
