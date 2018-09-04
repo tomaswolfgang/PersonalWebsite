@@ -19,20 +19,35 @@ header{
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: inset 0px -450px 450px -70px rgba(0,0,0,0.6);
+  flex-direction: row;
+  box-shadow: inset 0px -300px 300px -150px rgba(0,0,0,0.6);
+  @include for-tablet-portrait-down{
+    flex-direction: column;
+  }
+
+  .profile-container{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: solid 3px white;
+    background-image: url("../img/profile.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
   .text-container{
     color: white;
     padding:20px;
     letter-spacing: 0.03em;
     .title{
-      text-align: center;
+      text-align: left;
       margin-bottom: 20px;
       @include for-tablet-portrait-down{
         text-align: left;
       }
     }
     .description{
-      text-align: center;
+      text-align: left;
       @include for-tablet-portrait-down{
         text-align: left;
       }

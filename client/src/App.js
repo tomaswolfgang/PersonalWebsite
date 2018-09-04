@@ -12,7 +12,47 @@ class App extends Component {
       tab: 0,
       sidebar:false,
     }
+
+    this.addLike = this.addLike.bind(this);
   }
+
+  componentDidMount(){
+    this.getLikes()
+    .then(res => {
+      res.data.forEach((target) => {
+        this.setState({[target.id]: target.count});
+      })
+    })
+  }
+
+  async getLikes(){
+    const response = await fetch('/allLikes');
+    const body = await response.json();
+    if (response.status !== 200) throw Error(body.message);
+    return body;
+  }
+
+  addLike(id){
+    Promise.resolve(this.setState({[id]: this.state[id] + 1}))
+    .then(() => this.updateLikes({id, count: this.state[id]}))
+
+  }
+
+  async updateLikes(data){
+    const response = await fetch("/like",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+    const body = await response.json();
+    if (response.status !== 200) throw Error(body.message);
+    return body;
+  }
+
+
 
   constructNav(){
     let navCont = [];
@@ -43,15 +83,20 @@ class App extends Component {
     )
   }
 
+
   constructTab(index){
+
+    const currentTab = TABS[index];
     let tabCont = [];
     let info = TABINFO[TABS[index]];
     let count = 0;
-    if(TABS[index] === "Personal"){
+
+    if(currentTab === "Personal"){
       count = 0;
       PERSONALTAB.forEach((item) => {
+        const c = count;
         tabCont.push(
-          <PersonalCard key={TABS[index]+"-"+count} title={item.title} descriptions={item.descriptions}/>
+          <PersonalCard key={currentTab+"-"+count} id={currentTab+"-"+c} title={item.title} descriptions={item.descriptions}/>
         );
         count++;
       });
@@ -61,10 +106,10 @@ class App extends Component {
         </div>
       )
     }
-    else if(TABS[index] === "Work"){
+    else if(currentTab === "Work"){
       count = 0;
       info.forEach((item) => {
-        tabCont.push(<ProjectCard details={item}  key={TABS[index]+"-"+count}/>)
+        tabCont.push(<ProjectCard details={item} id={currentTab+"-"+count} likes={this.state[currentTab+"-"+count]}  key={currentTab+"-"+count} addLike={this.addLike}/>)
         count++;
       })
       return <div className="container">{tabCont}</div>;
@@ -72,7 +117,7 @@ class App extends Component {
     else{
       count = 0;
       info.forEach((item) => {
-        tabCont.push(<ProjectCard2 details={item}  key={TABS[index]+"-"+count} />);
+        tabCont.push(<ProjectCard2 details={item} id={currentTab+"-"+count} likes={this.state[currentTab+"-"+count]}  key={currentTab+"-"+count} addLike={this.addLike} />);
         count++;
       })
       return <div className="container">{tabCont}</div>;
@@ -106,13 +151,19 @@ class App extends Component {
           <i className="mobile-hamburger fa fa-bars fa-3x" onClick={()=> this.openSidebar()}></i>
         </div>
         <header>
+        <div className="profile-container">
+
+        </div>
           <div className="text-container">
             <h1 className="title">Thomas Wong</h1>
             <h3 className="description">Developer, Dancer, Dreamer</h3>
+            <h3>{this.state.response}</h3>
           </div>
+
         </header>
         {this.constructNav()}
         {this.constructTab(this.state.tab)}
+
       </div>
     );
   }

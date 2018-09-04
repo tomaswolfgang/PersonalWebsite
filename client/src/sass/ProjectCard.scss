@@ -19,16 +19,59 @@
   }
   float:left
 }
+
+// .work-card{
+//   height: 530px;
+//   @include for-tablet-landscape-down{
+//     height: 600px;
+//   }
+//   @include for-tablet-portrait-down{
+//
+//   }
+// }
+//
+// .project-card{
+//   height: 400px;
+//   @include for-tablet-landscape-down{
+//
+//   }
+//   @include for-tablet-portrait-down{
+//
+//   }
+// }
+
 .card-container{
   width: 100%;
   text-align: left;
   box-shadow: 0px 1px 20px rgba(0,0,0,0.15);
   border-radius: 8px;
   overflow: hidden;
+  position:relative;
   transition: box-shadow 0.3s, transform 0.3s;
+  padding-bottom: 15px;
   &:hover{
-    box-shadow: 0px 1px 25px rgba(0,0,0,0.35);
+    box-shadow: 0px 1px 25px rgba(0,0,0,0.25);
     transform: scale(1.01);
+  }
+
+  .likes{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: row;
+    color: gray;
+    z-index: 5;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 1;
+    //transition: opacity 0.1s;
+    &:hover{
+      opacity: 0.8;
+    }
+    .likon{
+      margin-left: 7px;
+    }
   }
 
   .card-picture2{
@@ -110,7 +153,7 @@
     text-decoration: none;
     color: $grey-high;
     opacity: 1;
-    transition: opacity 1s;
+    //transition: opacity 1s;
     &:hover{
       opacity: 0.8;
     }
