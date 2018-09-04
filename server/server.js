@@ -2,13 +2,15 @@ const express = require('express');
 const MongoClient = require('mongodb').MongoClient;
 const bodyParser= require('body-parser');
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3001;
 const path = require('path');
+const staticFiles = express.static(path.join(__dirname, '../../client/build'))
 var db;
 
-//app.use( express.static( `${__dirname}/client/build` ) );
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
+app.use(staticFiles);
+
 MongoClient.connect("mongodb://tommy:isane1@ds141812.mlab.com:41812/tommy", {useNewUrlParser: true},(err, client) => {
   if(err) return console.log(err);
 
@@ -28,7 +30,7 @@ MongoClient.connect("mongodb://tommy:isane1@ds141812.mlab.com:41812/tommy", {use
 
   //add a like to something
   app.post('/like', (req, res) => {
-    console.log(req.body)
+    //console.log(req.body)
     let query = {id: req.body.id};
     let newVal = {$set: {count: req.body.count}};
 
@@ -42,7 +44,3 @@ MongoClient.connect("mongodb://tommy:isane1@ds141812.mlab.com:41812/tommy", {use
 
   app.listen(port, () => console.log(`Listening on port ${port}`));
 })
-
-// app.get('*', (req, res)=>{
-//   res.sendFile(path.join(__dirname, '/client/build/index.html'));
-// })
