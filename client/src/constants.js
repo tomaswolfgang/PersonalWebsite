@@ -89,11 +89,12 @@ const TABINFO = {
         date: 'C#, Unity, Git',
     },
     {
-        title: "Probabilistic BLAST",
+        title: "P BLAST",
         icon: "fa fa-flask",
         position: "",
         description:[
            "- A Java decorator class for the bioinformatics tool BLAST",
+           "- Locates and scores query strings against probabilistic datasets"
         ],
         color: '#c1f6ff',
         link: 'https://github.com/tomaswolfgang/Probabilistic-BLAST',
@@ -105,7 +106,8 @@ const TABINFO = {
         position: "",
         description:[
            "- A game that procedurally generates clusters of linked mazes",
-           "- Emphasis on the object-oriented concept of encapsulation for the procedural generation",
+           "- classes designed to emphasize encapsulation"
+           "- Abstracted Minimum Spanning Tree algorithm for procedural generation",
         ],
         color: '#c1f6ff',
         link: 'https://github.com/tomaswolfgang/VMB',
