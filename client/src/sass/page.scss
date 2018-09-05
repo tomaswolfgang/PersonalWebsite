@@ -237,7 +237,7 @@ footer{
   font-family: 'Karla', sans-serif;
   color: $grey-mid;
   font-size: 12px;
-  box-shadow: inset 0px -90px 140px -120px rgba(0,0,0,0.6);
+  background-image: linear-gradient(white 50%, rgba(215,215,215,1) 100%);
   .heart{
     color: pink;
     margin: 0px 5px;
