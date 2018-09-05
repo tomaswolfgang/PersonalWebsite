@@ -32,7 +32,7 @@ class ProjectCard2 extends Component {
     let description = [];
     let pCount = 0;
     this.state.description.forEach((item) => {
-      description.push(<p key={"project-description-"+pCount}>{item}</p>);
+      description.push(<p key={"project-description-"+pCount}><i className="bullet-point fa fa-circle"></i>{item}</p>);
       pCount++;
     })
 

@@ -20,26 +20,6 @@
   float:left
 }
 
-// .work-card{
-//   height: 530px;
-//   @include for-tablet-landscape-down{
-//     height: 600px;
-//   }
-//   @include for-tablet-portrait-down{
-//
-//   }
-// }
-//
-// .project-card{
-//   height: 400px;
-//   @include for-tablet-landscape-down{
-//
-//   }
-//   @include for-tablet-portrait-down{
-//
-//   }
-// }
-
 .card-container{
   font-family: 'Karla', sans-serif;
   width: 100%;
@@ -52,7 +32,7 @@
   padding-bottom: 15px;
   &:hover{
     box-shadow: 0px 1px 25px rgba(0,0,0,0.25);
-    transform: scale(1.01);
+    transform: scale(1.005);
   }
 
   .likes{
@@ -143,7 +123,7 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
-    @include for-tablet-portrait-down{
+    @include for-tablet-landscape-down{
       height: 200px;
     }
     h4{
@@ -151,6 +131,12 @@
     }
     p{
       flex-grow: 1;
+    }
+
+    .bullet-point{
+      font-size: 5px;
+      margin-right: 5px;
+      vertical-align: middle;
     }
   }
   .card-link{
