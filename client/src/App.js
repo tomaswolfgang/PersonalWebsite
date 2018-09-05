@@ -163,7 +163,9 @@ class App extends Component {
         </header>
         {this.constructNav()}
         {this.constructTab(this.state.tab)}
-
+        <footer>
+          Made with <i className="heart fa fa-heart"></i> by Thomas Wong using ReactJs
+        </footer>
       </div>
     );
   }

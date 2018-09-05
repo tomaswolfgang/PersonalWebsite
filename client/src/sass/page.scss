@@ -207,3 +207,21 @@ header{
   }
 
 }
+
+footer{
+  float: left;
+  margin-top: 50px;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Karla', sans-serif;
+  color: $grey-mid;
+  font-size: 12px;
+  box-shadow: inset 0px -90px 140px -120px rgba(0,0,0,0.6);
+  .heart{
+    color: pink;
+    margin: 0px 5px;
+  }
+}
