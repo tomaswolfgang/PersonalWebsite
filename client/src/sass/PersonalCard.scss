@@ -20,7 +20,7 @@
       .link{
         text-decoration: none;
         color: #a0a0a0;
-        font-family: sans-serif;
+        font-family: 'Karla', sans-serif;
         opacity: 1;
         transition: opacity 0.3s;
         font-size: 14px;
@@ -37,7 +37,7 @@
       align-items: flex-start;
       justify-content: flex-end;
       .date{
-        font-family: sans-serif;
+        font-family: 'Karla', sans-serif;
         color: $grey-mid;
       }
     }
