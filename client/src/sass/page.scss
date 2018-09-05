@@ -112,6 +112,16 @@ header{
   left: -100%;
 }
 
+.mobile-title{
+  display: none;
+  @include for-tablet-portrait-down{
+    display:block;
+    text-align: left;
+    max-width: 300px;
+    margin: 0px auto 25px;
+  }
+}
+
 .mobile-hamburger-container{
   display: none;
   position: fixed;
@@ -177,6 +187,7 @@ header{
 
 
 
+
 .container{
   width:1150px;
   margin:auto;
@@ -195,7 +206,7 @@ header{
 .personal-container{
   width: 80%;
   margin:auto;
-  padding: 120px 0px;
+  padding: 100px 0px;
   text-align: center;
   .cont-title{
     text-align: center;

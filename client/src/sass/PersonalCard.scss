@@ -1,6 +1,13 @@
 @import 'mixins';
 @import 'variables';
 .personal-tab-container{
+  .personal-tab-title{
+    margin-bottom: 5px;
+    @include for-tablet-portrait-down{
+      text-align: left;
+
+    }
+  }
 
   .inner-tab-container{
     display: flex;
@@ -39,6 +46,9 @@
       .date{
         font-family: 'Karla', sans-serif;
         color: $grey-mid;
+        @include for-tablet-portrait-down{
+          margin-top:5px;
+        }
       }
     }
   }

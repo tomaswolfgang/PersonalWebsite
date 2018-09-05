@@ -5,7 +5,7 @@ import nim from './img/nim.png';
 import tra from './img/tra.jpg';
 import sim from './img/sim.png';
 
-const TABS = ["Work", "Projects", "Personal"];
+const TABS = ["Work", "Projects", "Dance"];
 const TABINFO = {
   Work: [
     {

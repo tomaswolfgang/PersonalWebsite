@@ -91,7 +91,7 @@ class App extends Component {
     let info = TABINFO[TABS[index]];
     let count = 0;
 
-    if(currentTab === "Personal"){
+    if(currentTab === "Dance"){
       count = 0;
       PERSONALTAB.forEach((item) => {
         const c = count;
@@ -112,7 +112,7 @@ class App extends Component {
         tabCont.push(<ProjectCard details={item} id={currentTab+"-"+count} likes={this.state[currentTab+"-"+count]}  key={currentTab+"-"+count} addLike={this.addLike}/>)
         count++;
       })
-      return <div className="container">{tabCont}</div>;
+      return <div className="container"><h1 className="mobile-title">Work</h1>{tabCont}</div>;
     }
     else{
       count = 0;
@@ -120,7 +120,7 @@ class App extends Component {
         tabCont.push(<ProjectCard2 details={item} id={currentTab+"-"+count} likes={this.state[currentTab+"-"+count]}  key={currentTab+"-"+count} addLike={this.addLike} />);
         count++;
       })
-      return <div className="container">{tabCont}</div>;
+      return <div className="container"><h1 className="mobile-title">Projects</h1>{tabCont}</div>;
     }
   }
 

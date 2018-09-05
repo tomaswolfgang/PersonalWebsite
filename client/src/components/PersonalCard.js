@@ -32,7 +32,7 @@ class PersonalCard extends Component {
 
     return (
     <div className="personal-tab-container">
-      <h2>{this.state.title}</h2>
+      <h1 className="personal-tab-title">{this.state.title}</h1>
       {desc}
     </div>);
   }
