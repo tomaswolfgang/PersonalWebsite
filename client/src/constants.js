@@ -106,7 +106,7 @@ const TABINFO = {
         position: "",
         description:[
            "- A game that procedurally generates clusters of linked mazes",
-           "- classes designed to emphasize encapsulation"
+           "- class structure designed to emphasize encapsulation",
            "- Abstracted Minimum Spanning Tree algorithm for procedural generation",
         ],
         color: '#c1f6ff',
