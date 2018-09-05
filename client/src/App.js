@@ -148,7 +148,7 @@ class App extends Component {
         {this.constructSideBar()}
         <div className={this.state.sidebar ? "overlay" : "overlay overlay-hidden"} onClick={() => this.closeSidebar()}></div>
         <div className="mobile-hamburger-container">
-          <i className="mobile-hamburger fa fa-bars fa-3x" onClick={()=> this.openSidebar()}></i>
+          <i className="mobile-hamburger fa fa-bars" onClick={()=> this.openSidebar()}></i>
         </div>
         <header>
         <div className="profile-container">
@@ -164,7 +164,8 @@ class App extends Component {
         {this.constructNav()}
         {this.constructTab(this.state.tab)}
         <footer>
-          Made with <i className="heart fa fa-heart"></i> by Thomas Wong using ReactJs
+          <p>Made with <i className="heart fa fa-heart"></i> by Thomas Wong using ReactJs</p>
+          <p>(Aug, 2018)</p>
         </footer>
       </div>
     );

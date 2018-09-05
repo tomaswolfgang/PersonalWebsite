@@ -122,9 +122,10 @@ header{
     display: block;
   }
   .mobile-hamburger{
-    color: white;
+    color: #f8f8f8;
     cursor: pointer;
-    text-shadow: 1px 1px 1px #ccc;
+    text-shadow: 1px 1px 6px #9c9c9c;
+    font-size: 10px;
   }
 }
 
@@ -216,6 +217,7 @@ footer{
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   font-family: 'Karla', sans-serif;
   color: $grey-mid;
   font-size: 12px;
