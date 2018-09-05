@@ -125,16 +125,21 @@ header{
 .mobile-hamburger-container{
   display: none;
   position: fixed;
-  top: 10px;
-  left: 10px;
+  height: 60px;
+  width: 60px;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(70,70,70,0.3);
+  border-radius: 0 0 5px 0;
+  top: 0px;
+  left: 0px;
   z-index: 4;
   @include for-tablet-portrait-down{
-    display: block;
+    display: flex;
   }
   .mobile-hamburger{
-    color: #f8f8f8;
+    color: white;
     cursor: pointer;
-    text-shadow: 1px 1px 6px #9c9c9c;
     font-size: 50px;
   }
 }
