@@ -91,7 +91,7 @@ class App extends Component {
     let info = TABINFO[TABS[index]];
     let count = 0;
 
-    if(currentTab === "Dance"){
+    if(currentTab === "Personal"){
       count = 0;
       PERSONALTAB.forEach((item) => {
         const c = count;
