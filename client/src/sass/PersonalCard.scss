@@ -2,7 +2,7 @@
 @import 'variables';
 .personal-tab-container{
   .personal-tab-title{
-    margin-bottom: 5px;
+    margin: 20px 0px;
     @include for-tablet-portrait-down{
       text-align: left;
 

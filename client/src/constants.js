@@ -118,29 +118,45 @@ const TABINFO = {
 
 const PERSONALTAB = [
   {
+    title: "Education",
+    descriptions:[
+      {
+        subtitle: "McGill University",
+        subdesc: "Honours Computer Science and minor in Mathematics",
+        link: "javascript:void(0)",
+        linkText: "CGPA: 3.51",
+        date: "September, 2013 - June, 2018"
+      }
+    ]
+  },
+  {
     title: "Dance",
     descriptions: [
       {
         subtitle: "Academy Dance Competition",
         subdesc: "Urban Groove, 3rd Place",
+        linkText: "See video",
         link: "https://www.youtube.com/watch?v=slp24q-OVA0",
         date: "March, 2018"
       },
       {
         subtitle: "Academy Dance Competition",
         subdesc: "Urban Groove, 3rd Place",
+        linkText: "See video",
         link: "https://www.youtube.com/watch?v=NidlkFlRAJw",
         date: "March, 2016"
       },
       {
         subtitle: "Complex Dance competition",
         subdesc: "Summer Stacks 3rd Place",
+        linkText: "See video",
         link: "https://www.youtube.com/watch?v=hawEXixWGSY&index=4&list=PLOuiLshQ_4j3O4HuxPmsUr0v-DZQKlMcp",
         date: "July, 2015"
       },
       {
         subtitle: "Collaboration Dance Competition",
         subdesc: "Funksters 3rd Place",
+        linkText: "See video",
         link: "https://www.youtube.com/watch?v=ieSFJGXBbG4&index=4&list=PL98999E0853AF06F8",
         date: "March, 2012"
       }

@@ -19,7 +19,7 @@ class PersonalCard extends Component {
           <div className="left-col">
             <h3>{d.subtitle}</h3>
             <p>{d.subdesc}</p>
-            <a className="link" href={d.link} target="_blank">See video</a>
+            <a className="link" href={d.link} target="_blank">{d.linkText}</a>
           </div>
           <div className="right-col">
             <p className="date">{d.date}</p>
