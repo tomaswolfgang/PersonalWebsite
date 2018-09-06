@@ -123,7 +123,7 @@ const PERSONALTAB = [
       {
         subtitle: "McGill University",
         subdesc: "Honours Computer Science and minor in Mathematics",
-        link: "javascript:void(0)",
+        link: "www.google.com",
         linkText: "CGPA: 3.51",
         date: "September, 2013 - June, 2018"
       }

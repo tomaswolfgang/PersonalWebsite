@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import ProjectCard from './components/ProjectCard.js';
 import PersonalCard from './components/PersonalCard.js';
 import ProjectCard2 from './components/ProjectCard2.js';
@@ -12,7 +13,7 @@ class App extends Component {
       tab: 0,
       sidebar:false,
     }
-
+    this.scrollTarget = React.createRef();
     this.addLike = this.addLike.bind(this);
   }
 
@@ -51,8 +52,6 @@ class App extends Component {
     if (response.status !== 200) throw Error(body.message);
     return body;
   }
-
-
 
   constructNav(){
     let navCont = [];
@@ -101,7 +100,7 @@ class App extends Component {
         count++;
       });
       return (
-        <div className="personal-container">
+        <div className="personal-container" ref={this.scrollTarget}>
           {tabCont}
         </div>
       )
@@ -112,7 +111,7 @@ class App extends Component {
         tabCont.push(<ProjectCard details={item} id={currentTab+"-"+count} likes={this.state[currentTab+"-"+count]}  key={currentTab+"-"+count} addLike={this.addLike}/>)
         count++;
       })
-      return <div className="container"><h1 className="mobile-title">Work</h1>{tabCont}</div>;
+      return <div className="container" ref={this.scrollTarget}><h1 className="mobile-title">Work</h1>{tabCont}</div>;
     }
     else{
       count = 0;
@@ -120,7 +119,7 @@ class App extends Component {
         tabCont.push(<ProjectCard2 details={item} id={currentTab+"-"+count} likes={this.state[currentTab+"-"+count]}  key={currentTab+"-"+count} addLike={this.addLike} />);
         count++;
       })
-      return <div className="container"><h1 className="mobile-title">Projects</h1>{tabCont}</div>;
+      return <div className="container" ref={this.scrollTarget}><h1 className="mobile-title">Projects</h1>{tabCont}</div>;
     }
   }
 
@@ -137,9 +136,13 @@ class App extends Component {
   }
 
   changeTab(index){
-    this.setState({
-      tab: index
-    });
+    Promise.resolve(this.setState({tab: index}))
+      .then(() => this.scrollToTarget())
+  }
+
+  scrollToTarget(){
+    const domNode = ReactDOM.findDOMNode(this.scrollTarget.current);
+    window.scrollTo({ top: domNode.offsetTop, behavior: "smooth"})
   }
 
   render() {
