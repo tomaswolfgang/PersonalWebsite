@@ -11,10 +11,13 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(staticFiles);
 
+
+
 MongoClient.connect("mongodb://tommy:isane1@ds141812.mlab.com:41812/tommy", {useNewUrlParser: true},(err, client) => {
   if(err) return console.log(err);
 
   db = client.db("tommy");
+
 
   //Get all the likes
   app.get('/allLikes', (req,res)=>{
