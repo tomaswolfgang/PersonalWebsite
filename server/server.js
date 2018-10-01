@@ -1,6 +1,7 @@
 const express = require('express');
 const MongoClient = require('mongodb').MongoClient;
 const bodyParser= require('body-parser');
+const compression = require('compression');
 const app = express();
 const port = process.env.PORT || 3001;
 const path = require('path');
@@ -10,6 +11,7 @@ var db;
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(staticFiles);
+app.use(compression());
 
 
 
