@@ -3,9 +3,9 @@ const MongoClient = require('mongodb').MongoClient;
 const bodyParser= require('body-parser');
 const compression = require('compression');
 const app = express();
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 8080;
 const path = require('path');
-const staticFiles = express.static(path.join(__dirname, '../../client/build'))
+const staticFiles = express.static(path.join(__dirname, '../client/build'))
 var db;
 
 app.use(bodyParser.urlencoded({extended: true}));

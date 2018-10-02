@@ -59,7 +59,7 @@ class App extends Component {
       const tabNum = i;
       navCont.push(
         <h2 key={"tab-"+tabNum} className={this.state.tab === i ? " active nav-item": "nav-item"} onClick={() => this.changeTab(tabNum)}>{TABS[tabNum]}</h2>
-      )
+      );
     }
     return (<div className="nav-strip">{navCont}</div>)
   }
@@ -142,7 +142,7 @@ class App extends Component {
 
   scrollToTarget(){
     const domNode = ReactDOM.findDOMNode(this.scrollTarget.current);
-    window.scrollTo({ top: domNode.offsetTop, behavior: "smooth"})
+    window.scrollTo({ top: domNode.offsetTop, left:0, behavior: "smooth"})
   }
 
   render() {

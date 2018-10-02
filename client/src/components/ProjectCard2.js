@@ -18,8 +18,20 @@ class ProjectCard2 extends Component {
       date: props.details.date,
       link: props.details.link,
       color: props.details.color,
-      addLike: props.addLike
+      addLike: props.addLike,
+      hover: false
     };
+
+    this.hoverOn = this.hoverOn.bind(this);
+    this.hoverOff = this.hoverOff.bind(this);
+  }
+
+  hoverOn(){
+    this.setState({hover:true});
+  }
+
+  hoverOff(){
+    this.setState({hover:false})
   }
 
   componentWillReceiveProps(nextProps){
@@ -38,19 +50,22 @@ class ProjectCard2 extends Component {
 
     return (
       <div className="card-wrapper" key={this.state.title}>
-        <div className="card-container project-card" style={{backgroundImage: 'linear-gradient('+ this.state.color+' 0%, white 75%)'}}>
+        <div className="card-container project-card" style={{backgroundImage: 'linear-gradient('+ this.state.color+' 0%, white 75%)'}}
+          onMouseEnter={this.hoverOn} onMouseLeave={this.hoverOff}
+        >
+          <div className={this.state.hover ? "card-overlay card-overlay-on" : "card-overlay" } style={{backgroundColor: this.state.color}}></div>
           <div className="likes" onClick={() => this.state.addLike(this.state.id)}>
             {this.state.likes}
             <i className="likon fa fa-thumbs-up"></i>
           </div>
-          <div className="card-picture2">
+          <div className="card-picture2 on-card-overlay">
             {logo}
             <h2 className="card-title">{this.state.title}</h2>
             <div className="date">
               {this.state.date}
             </div>
           </div>
-          <div className="card-desc-container">
+          <div className="card-desc-container on-card-overlay">
             <h4>
               {this.state.position}
             </h4>
